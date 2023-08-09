@@ -2,8 +2,15 @@ package main
 
 import "fmt"
 
+type MyType string
+
+func (mt MyType) MethodMyType() {
+	fmt.Println("Hello from method")
+}
+
 func foo() {
-	panic("PANIC")
+	//panic("PANIC")
+	fmt.Println("foo")
 }
 
 func div(a, b int, x string) (int, error) {
@@ -25,7 +32,7 @@ func main() {
 		}
 	}()
 
-	answer, err := div(10, 0, "asdasds")
+	answer, err := div(10, 2, "asdasds")
 	if err != nil {
 		fmt.Println(err)
 	} else {
@@ -33,4 +40,20 @@ func main() {
 	}
 	foo()
 	fmt.Println("Hello world!")
+
+	var mt MyType
+	mt.MethodMyType()
+
+	var fruit Fruit
+
+	fruit = "Apple"
+	name := Name(fruit)
+	fmt.Println(name)
+
+	var str string
+	str = "Hello, world!"
+	println(string(str[0]))
 }
+
+type Name string
+type Fruit string
