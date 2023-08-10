@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 type MyType string
 
@@ -32,6 +35,25 @@ func main() {
 		}
 	}()
 
+	const (
+		Grey = iota
+		Black
+		White
+		Red
+	)
+
+	println(Email)
+	var mtT MyType = "1233"
+	rnd, err := packageFunc(mtT)
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(rnd)
+	}
+
+	fmt.Println(Grey, Black, White, Red)
+
 	answer, err := div(10, 2, "asdasds")
 	if err != nil {
 		fmt.Println(err)
@@ -53,6 +75,15 @@ func main() {
 	var str string
 	str = "Hello, world!"
 	println(string(str[0]))
+
+	bornYear := getRandIntInRange()
+	helloDudes(bornYear)
+}
+
+func getRandIntInRange() int {
+	minV, maxV := 1960, 2020
+
+	return rand.Intn(maxV-minV) + minV
 }
 
 type Name string
