@@ -31,6 +31,11 @@ func main() {
 	helloDudes(bornYear)
 
 	simpleIf("апыварывпо")
+
+	simpleFor()
+	infiniteLoop()
+	inRangeLoop()
+	fizzBuzz()
 }
 
 func getRandIntInRange() int {

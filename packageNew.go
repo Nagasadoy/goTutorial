@@ -2,19 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 const Email = "nagasadoy@gmail.com"
-
-func packageFunc(myType MyType) (int, error) {
-	if len(myType) < 2 {
-		return 0, fmt.Errorf("длина строки меньше 2")
-	}
-
-	return rand.Int(), nil
-
-}
 
 func helloDudes(year int) {
 	fmt.Println(year)
