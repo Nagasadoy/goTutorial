@@ -27,11 +27,13 @@ func main() {
 		}
 	}()
 
-	bornYear := getRandIntInRange()
-	helloDudes(bornYear)
-
+	helloDudes(getRandIntInRange())
+	// операторы ветвления
 	simpleIf("апыварывпо")
-
+	switchCaseSimple(12)
+	switchCaseFallThrough("hello")
+	switchCaseFallThrough("world")
+	// циклы
 	simpleFor()
 	infiniteLoop()
 	inRangeLoop()
