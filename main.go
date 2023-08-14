@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math/rand"
+	"os"
 )
 
 func foo() {
@@ -38,9 +40,36 @@ func main() {
 	infiniteLoop()
 	inRangeLoop()
 	fizzBuzz()
+
+	printPointer()
+	exampleUsePointers()
+	rowsCounter()
 }
 
 func getRandIntInRange() int {
 	minV, maxV := 1960, 2020
 	return rand.Intn(maxV-minV) + minV
+}
+
+func rowsCounter() {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Interaction counter")
+
+	cnt := 0
+	for {
+		fmt.Print("-> ")
+		// Считываем введённую пользователем строку. Программа ждёт, пока пользователь введёт строку
+		_, err := reader.ReadString('\n')
+		if err != nil {
+			panic(err)
+		}
+
+		f(&cnt)
+
+		fmt.Printf("User input %d lines\n", cnt)
+	}
+}
+
+func f(pCnt *int) {
+	*pCnt++
 }
