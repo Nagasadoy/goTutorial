@@ -43,7 +43,8 @@ func main() {
 
 	printPointer()
 	exampleUsePointers()
-	rowsCounter()
+	//rowsCounter()
+	arraysSimple()
 }
 
 func getRandIntInRange() int {
