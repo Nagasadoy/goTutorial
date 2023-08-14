@@ -45,6 +45,9 @@ func main() {
 	exampleUsePointers()
 	//rowsCounter()
 	arraysSimple()
+	simpleSlices()
+
+	fillSliceExample()
 }
 
 func getRandIntInRange() int {
