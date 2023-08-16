@@ -2,7 +2,9 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
+	"log"
 	"math/rand"
 	"os"
 )
@@ -47,7 +49,39 @@ func main() {
 	arraysSimple()
 	simpleSlices()
 
-	fillSliceExample()
+	//fillSliceExample()
+	//maps()
+	//order := []string{"хлеб", "буженина", "сыр", "огурцы"}
+	//mapsTest(order)
+
+	//indexes := find([]int{3, 1, 4, 10, 2, 14, 10, 12, 13, 1}, 4)
+	//fmt.Println(indexes)
+
+	//input := []string{
+	//	"cat",
+	//	"dog",
+	//	"bird",
+	//	"dog",
+	//	"parrot",
+	//	"cat",
+	//}
+	//
+	//fmt.Println(RemoveDuplicates(input))
+
+	var user, err = NewUser("alex", "email@email.com", 24)
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(*user)
+	}
+
+	jsonUser, err := json.Marshal(*user)
+	if err != nil {
+		log.Fatalln("error")
+	}
+
+	fmt.Println(string(jsonUser))
 }
 
 func getRandIntInRange() int {
