@@ -2,9 +2,8 @@ package main
 
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
-	"log"
+	"goFirstTry/toppackage/middlepackage/bottompackage/mathxxx"
 	"math/rand"
 	"os"
 )
@@ -68,20 +67,57 @@ func main() {
 	//
 	//fmt.Println(RemoveDuplicates(input))
 
-	var user, err = NewUser("alex", "email@email.com", 24)
+	//var user, err = NewUser("alex", "email@email.com", 24)
+	//
+	//if err != nil {
+	//	fmt.Println(err)
+	//} else {
+	//	fmt.Println(*user)
+	//}
+	//
+	//jsonUser, err := json.Marshal(*user)
+	//if err != nil {
+	//	log.Fatalln("error")
+	//}
+	//
+	//fmt.Println(string(jsonUser))
+	funcArea, ok := area(square)
 
-	if err != nil {
-		fmt.Println(err)
+	if !ok {
+		fmt.Println("Неизвестная фигура")
 	} else {
-		fmt.Println(*user)
+		s := funcArea(5)
+		fmt.Println(s)
 	}
 
-	jsonUser, err := json.Marshal(*user)
-	if err != nil {
-		log.Fatalln("error")
-	}
+	//VeryLongTimeFunction()
+	//testDefer()
 
-	fmt.Println(string(jsonUser))
+	//var s = []int{1, 2, 4, 31, 13, 12}
+	//
+	//fmt.Println(s)
+	//
+	//sum := mathSlice.SumSlice(s)
+	//fmt.Println(sum)
+	//
+	//mathSlice.MapSlice(s, func(el int) int {
+	//	return el * el
+	//})
+	//
+	//fmt.Println(s)
+	//
+	//result := mathSlice.FoldSlice(s, func(x, y int) int {
+	//
+	//	if y%2 == 0 {
+	//		return x + y
+	//	}
+	//	return x
+	//}, 0)
+	//
+	//fmt.Println(result)
+
+	fmt.Println(mathxxx.AddInts(4, 7))
+
 }
 
 func getRandIntInRange() int {
